@@ -1,4 +1,12 @@
+### Python template for .gitignore
 **/.idea
-*.jpg
 __pycache__/
-*.pyc
+*.py[cod]
+
+
+
+
+
+
+
+*.jpg
