@@ -3,7 +3,9 @@ from .forms import MathForm
 
 # Create your views here.
 
+PAGES = ['']
+
 def index(request):
 
-    return render(request, 'main_page/index.html', {'name': 'main_page'})
+    return render(request, 'mainpage/index.html', {'title': 'mainpage'})
 
