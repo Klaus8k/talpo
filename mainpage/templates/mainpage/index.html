@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
 
-<h1> {{ title }} </h1>
-<h1> {{ title }} </h1>
+<ul class="menu">
+    <li><a href="{% url 'ordercost:index' %}">Приложение расчета себестоимости продукции</a></li>
+    <li><a href="#">ссылка</a></li>
+    <li><a href="#">ссылка</a></li>
+    <li><a href="#">ссылка</a></li>
+    <li><a href="#">ссылка</a></li>
+    <li><a href="#">ссылка</a></li>
+</ul>
 
 {% endblock %}
