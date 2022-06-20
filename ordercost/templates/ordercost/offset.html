@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> offset </h1>
+
+<form action="{% url 'ordercost:offset' %}" method="get">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"> ok </button>
+
+</form>
+
+{% endblock %}

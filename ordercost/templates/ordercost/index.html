@@ -2,7 +2,11 @@
 
 {% block content %}
 
-<h1> {{ title }} </h1>
-<h1> {{ title }} </h1>
+<ul>
+
+{% for unit in unit_menu %}
+    <li><a href="{{ unit }}">{{ unit }}</a></li>
+{% endfor %}
+</ul>
 
 {% endblock %}

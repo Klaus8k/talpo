@@ -6,23 +6,21 @@
 </head>
 <body>
 
+
+
+{% block content %}
+{% endblock %}
+
+
+
 {% block main_menu %}
 
 <ul class="menu">
     <li><a href="{% url 'mainpage:index' %}">ГЛАВНАЯ</a></li>
     <li><a href="{% url 'ordercost:index' %}">Приложение расчета себестоимости продукции</a></li>
-    <li><a href="#">ссылка</a></li>
-    <li><a href="#">ссылка</a></li>
-    <li><a href="#">ссылка</a></li>
-    <li><a href="#">ссылка</a></li>
-    <li><a href="#">ссылка</a></li>
 </ul>
 
 {% endblock %}
-
-{% block content %}
-{% endblock %}
-
 
 </body>
 </html>
