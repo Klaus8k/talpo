@@ -10,5 +10,5 @@ PAGES = settings.INSTALLED_APPS[6:] # non django apps. better do it with split('
 
 def index(request):
 
-        return render(request, 'mainpage/index.html', {'apps': PAGES})
+        return render(request, 'mainpage/index.html', {'apps': PAGES[::-1]})
 
