@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MainPageConfig(AppConfig):
+class AppOrderCostConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'poligon'
+    name = 'app_order_cost'
