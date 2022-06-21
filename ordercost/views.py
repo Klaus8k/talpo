@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . import forms
+from .forms import OffsetForms
 
 # Create your views here.
 
@@ -12,8 +12,16 @@ def index(request):
     return render(request, 'ordercost/index.html', context=context)
 
 def offset(request):
-    form = forms.OffsetForms()
+    if request.method == 'GET':
+        form = OffsetForms(request.GET)
+        if form.is_valid():
+            print (form.cleaned_data) # выполнение бизнес логики и вывод в результат.
+# надо посмотреть как блок выводить когда надо. То есть результат выводим в блоке, а он или из шаблона или блок контента.
+    else:
+        form = OffsetForms()
+
     context = {'unit': 'offset', 'form' : form}
+
     return render(request, 'ordercost/offset.html', context=context)
 
 def solvent(request):
@@ -27,3 +35,4 @@ def riso(request):
 def stamp(request):
     context = {'unit': 'stamp'}
     return render(request, 'ordercost/stamp.html')
+
