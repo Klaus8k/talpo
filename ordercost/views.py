@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import OffsetForms
+from .logic import result
 
 # Create your views here.
 
@@ -12,15 +13,23 @@ def index(request):
     return render(request, 'ordercost/index.html', context=context)
 
 def offset(request):
+    context = {'unit': 'offset'}
     if request.method == 'GET':
         form = OffsetForms(request.GET)
         if form.is_valid():
-            print (form.cleaned_data) # выполнение бизнес логики и вывод в результат.
+            to_calc = form.cleaned_data
+            to_calc['unit'] = 'offset'
+            context['result'] = get_result(to_calc)
+
+
+            # выполнение бизнес логики и вывод в результат.
 # надо посмотреть как блок выводить когда надо. То есть результат выводим в блоке, а он или из шаблона или блок контента.
+
+
     else:
         form = OffsetForms()
 
-    context = {'unit': 'offset', 'form' : form}
+    context['form'] = form
 
     return render(request, 'ordercost/offset.html', context=context)
 
@@ -36,3 +45,7 @@ def stamp(request):
     context = {'unit': 'stamp'}
     return render(request, 'ordercost/stamp.html')
 
+
+# Сюда напишем функцию для вызова бизнеслогики с нашими значениями из форм
+def get_result(args: dict):
+    return result(args)
