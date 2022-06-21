@@ -21,6 +21,7 @@ def offset(request):
             to_calc['unit'] = 'offset'
             context['result'] = get_result(to_calc)
 
+            # return result with inclusion tag
 
             # выполнение бизнес логики и вывод в результат.
 # надо посмотреть как блок выводить когда надо. То есть результат выводим в блоке, а он или из шаблона или блок контента.
