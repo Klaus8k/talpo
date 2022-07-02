@@ -8,9 +8,18 @@
 <!--    {% csrf_token %}-->
     {{ form.as_p }}
     <button type="submit"> ok </button>
+    <button type="reset"> reset </button>
 
 </form>
 
-{{ result }}
+
+
+
+
+{% if result %}
+    <h2>Результат вычисления</h2>
+<!--    результат вычисления из context['result]-->
+    {{ result }}
+{% endif %}
 
 {% endblock %}

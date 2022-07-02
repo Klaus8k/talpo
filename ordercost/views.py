@@ -4,13 +4,15 @@ from .logic import result
 
 # Create your views here.
 
-ORDER_UNIT = ['offset','solvent','riso','stamp']
+ORDER_UNIT = ['offset', 'solvent', 'riso', 'stamp']
+
 
 # Меню выбора вида продукции
 def index(request):
     context = {'unit_menu': ORDER_UNIT}
 
     return render(request, 'ordercost/index.html', context=context)
+
 
 def offset(request):
     context = {'unit': 'offset'}
@@ -20,13 +22,6 @@ def offset(request):
             to_calc = form.cleaned_data
             to_calc['unit'] = 'offset'
             context['result'] = get_result(to_calc)
-
-            # return result with inclusion tag
-
-            # выполнение бизнес логики и вывод в результат.
-# надо посмотреть как блок выводить когда надо. То есть результат выводим в блоке, а он или из шаблона или блок контента.
-
-
     else:
         form = OffsetForms()
 
@@ -34,13 +29,16 @@ def offset(request):
 
     return render(request, 'ordercost/offset.html', context=context)
 
+
 def solvent(request):
     context = {'unit': 'solvent'}
     return render(request, 'ordercost/solvent.html')
 
+
 def riso(request):
     context = {'unit': 'riso'}
     return render(request, 'ordercost/riso.html')
+
 
 def stamp(request):
     context = {'unit': 'stamp'}
