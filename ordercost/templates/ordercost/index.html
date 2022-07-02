@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
 
 {% block content %}
-
+<hr>
 <ul>
 
 {% for unit in unit_menu %}
-    <li><a href="{{ unit }}">{{ unit }}</a></li>
+    <li><a href="{{ unit }}" >{{ unit }}</a></li>
 {% endfor %}
 </ul>
 

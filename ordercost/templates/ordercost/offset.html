@@ -1,8 +1,11 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
 
 {% block content %}
-
-<h1> offset </h1>
+<br>
+<br>
+<br>
+<h1> Offset </h1>
+<pre>Форма для ввода значений для из обработки</pre>
 
 <form action="{% url 'ordercost:offset' %}" method="get">
 <!--    {% csrf_token %}-->

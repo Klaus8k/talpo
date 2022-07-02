@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>talpo.ru</title>
+    <!--    Сюда надо вставить фильтр для отображения конкретной страницы-->
+    <title> {{ unit }}</title>
 </head>
+
+
 <body>
-
-
 
 {% block content %}
 {% endblock %}
 
 
-
 {% block main_menu %}
-
-<ul class="menu">
-    <li><a href="{% url 'mainpage:index' %}">ГЛАВНАЯ</a></li>
-    <li><a href="{% url 'ordercost:index' %}">Приложение расчета себестоимости продукции</a></li>
+<hr>
+<h3 align="left">Main menu</h3>
+<ul class="menu" type="circle">
+    <li><a href="{% url 'mainpage:index' %}">Main</a></li>
+    <li><a href="{% url 'ordercost:index' %}">Order Cost</a></li>
 </ul>
-
+<hr>
 {% endblock %}
 
 </body>
