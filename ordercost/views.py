@@ -15,13 +15,16 @@ def index(request):
 
 
 def offset(request):
+    print(request)
     context = {'unit': 'offset'}
+
     if request.method == 'GET':
         form = OffsetForms(request.GET)
         if form.is_valid():
             to_calc = form.cleaned_data
             to_calc['unit'] = 'offset'
             context['result'] = get_result(to_calc)
+
     else:
         form = OffsetForms()
 
