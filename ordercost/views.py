@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .forms import OffsetForms
 from .logic import result
 
@@ -15,9 +15,11 @@ def index(request):
 
 
 def offset(request):
-    print(request)
     context = {'unit': 'offset'}
 
+    if request.GET.get('reset'): # при ключе ресет переходит на реквест но только путь path
+        return HttpResponseRedirect(request.path)
+# если есть данные из формы передает очищенные данные в функцию обработки
     if request.method == 'GET':
         form = OffsetForms(request.GET)
         if form.is_valid():

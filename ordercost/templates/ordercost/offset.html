@@ -8,9 +8,10 @@
 <!--    {% csrf_token %}-->
     {{ form.as_p }}
     <button type="submit"> ok </button>
+    <button type="submit" value="reset" name="reset"> new calc </button>
 </form>
 
-<button type="reset"> reset </button>
+
 
 {% if result %}
     <h2>Результат вычисления</h2>
