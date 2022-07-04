@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect
 
 from .forms import OffsetForms
-from .logic import result
+from .logic import *
 
 # Create your views here.
 
@@ -26,8 +26,9 @@ def offset(request):
         form = OffsetForms(request.GET)
         if form.is_valid():
             to_calc = form.cleaned_data
-            to_calc['unit'] = 'offset'
             context['result'] = get_result(to_calc)
+            to_calc['unit'] = 'offset'
+
 
     else:
         form = OffsetForms()
@@ -54,4 +55,8 @@ def stamp(request):
 
 # Сюда напишем функцию для вызова бизнеслогики с нашими значениями из форм
 def get_result(args: dict):
-    return result(args)
+    var_args = [args[key] for key in args]
+    var = Culc_offset(var_args)
+    if int(var.weigth) < 200:
+        return var.culc_130()
+    else: return var.culc_300()
