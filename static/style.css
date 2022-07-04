@@ -1,0 +1,16 @@
+/* Style for site */
+
+H3 {
+  color: #000080;
+  font-size: 100%;
+  font-family: Arial, Verdana, sans-serif;
+}
+P {
+  padding-left: 20px;
+}
+body {
+  background: url('/static/green.gif');
+  background-size: 1000%;
+  background-position: left up;
+  background-repeat: repeat-x;
+}
