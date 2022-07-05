@@ -11,14 +11,9 @@
 
 <body text="teal" bgcolor="silver">
 
-{% block content %}
-{% endblock %}
-
-
-<img src="{% static 'green.gif' %}" alt="green.gif" border="0">
-
 <hr>
 <h3 align="left">Main menu</h3>
+
 <ul class="menu" type="circle">
     <li><a href="{% url 'mainpage:index' %}">Main</a></li>
     <li><a href="{% url 'ordercost:index' %}">Order Cost</a></li>
@@ -26,5 +21,9 @@
 <hr>
 
 
+{% block content %}
+{% endblock %}
+
+<pre id="copy">copyright&copy;</pre>
 </body>
 </html>

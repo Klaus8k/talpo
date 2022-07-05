@@ -5,12 +5,32 @@ H3 {
   font-size: 100%;
   font-family: Arial, Verdana, sans-serif;
 }
+/* class */
+h3.app {
+  color: red
+}
+
 P {
   padding-left: 20px;
 }
 body {
   background: url('/static/green.gif');
-  background-size: 1000%;
   background-position: left up;
   background-repeat: repeat-x;
 }
+/* id */
+#copy {
+  bottom: 10px;
+  color: #808080;
+  font: arial
+  }
+
+input[type="submit"] {
+  color: red;
+  margin: 5px;
+  }
+
+input[type="text"] {
+  margin-top: 20px;
+  color: blue;
+  }
